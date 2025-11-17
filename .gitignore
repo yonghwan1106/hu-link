@@ -39,3 +39,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# test files
+test-results.json
+screenshot.js
+test-detailed.js
+screenshots/
+
+# temporary files
+*.txt
+!README.txt
+
+# typo files
+componentsuiskeleton.tsx
+
+# playwright
+/test-results/
+/playwright-report/
+/playwright/.cache/

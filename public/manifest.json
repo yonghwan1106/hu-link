@@ -1,0 +1,64 @@
+{
+  "name": "HU-Link - 화성 통합 MaaS 플랫폼",
+  "short_name": "HU-Link",
+  "description": "100만 화성특례시 동서 균형발전과 시민 이동권 보장을 위한 HU 자산 통합 MaaS 플랫폼",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#0ea5e9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "390x844",
+      "type": "image/png",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshot-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide"
+    }
+  ],
+  "categories": ["transportation", "travel", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "시설 찾기",
+      "short_name": "시설",
+      "description": "공공시설 예약",
+      "url": "/facilities",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "교통 정보",
+      "short_name": "교통",
+      "description": "실시간 버스 위치",
+      "url": "/transport",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "마이 페이지",
+      "short_name": "마이",
+      "description": "내 예약 및 포인트",
+      "url": "/my",
+      "icons": [{ "src": "/icon-192.png", "sizes": "192x192" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

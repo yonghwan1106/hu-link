@@ -1,0 +1,14 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="512" height="512" rx="128" fill="#0ea5e9"/>
+
+  <!-- HU Letter H -->
+  <rect x="120" y="150" width="60" height="212" fill="white" rx="10"/>
+  <rect x="240" y="150" width="60" height="212" fill="white" rx="10"/>
+  <rect x="120" y="226" width="180" height="60" fill="white" rx="10"/>
+
+  <!-- Link Icon -->
+  <path d="M350 256 L410 256 C435 256 456 277 456 302 C456 327 435 348 410 348 L350 348 M350 302 L410 302"
+        stroke="white" stroke-width="40" stroke-linecap="round" fill="none"/>
+  <circle cx="330" cy="302" r="20" fill="white"/>
+</svg>
