@@ -54,9 +54,15 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12">
         <div className="text-center max-w-3xl mx-auto mb-8">
-          <Badge variant="secondary" className="mb-4">
-            100만 화성특례시 통합 MaaS 플랫폼
-          </Badge>
+          <div className="flex flex-col items-center gap-2 mb-4">
+            <Badge className="bg-gradient-to-r from-amber-500 to-orange-500 text-white border-0 px-4 py-1">
+              <Award className="h-4 w-4 mr-1" />
+              화성도시공사 ESG경영·경영혁신 시민 아이디어 공모전 출품작
+            </Badge>
+            <Badge variant="secondary">
+              100만 화성특례시 통합 MaaS 플랫폼
+            </Badge>
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
             시설 예약부터 이동까지,
             <br />
@@ -326,6 +332,21 @@ export default function HomePage() {
             </div>
           </CardContent>
         </Card>
+      </section>
+
+      {/* Footer Notice */}
+      <section className="container mx-auto px-4 pb-8">
+        <div className="text-center text-sm text-gray-500 space-y-2">
+          <div className="flex items-center justify-center gap-2">
+            <Award className="h-4 w-4 text-amber-500" />
+            <span className="font-medium text-gray-700">
+              화성도시공사 ESG경영·경영혁신 시민 아이디어 공모전 출품작
+            </span>
+          </div>
+          <p className="text-xs">
+            본 프로젝트는 공모전 출품을 위해 제작된 프로토타입이며, 실제 서비스와 다를 수 있습니다.
+          </p>
+        </div>
       </section>
     </div>
     </PullToRefresh>
