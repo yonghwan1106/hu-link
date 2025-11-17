@@ -1,10 +1,16 @@
-# HU-Link: 화성 통합 MaaS 플랫폼 프로토타입
+# HU-Link: 화성 통합 MaaS 플랫폼
+
+> **화성도시공사 ESG경영·경영혁신 시민 아이디어 공모전 출품작**
 
 100만 화성특례시 동서 균형발전과 시민 이동권 보장을 위한 HU 자산 통합 MaaS 플랫폼
 
+[![GitHub](https://img.shields.io/badge/GitHub-yonghwan1106%2Fhu--link-blue)](https://github.com/yonghwan1106/hu-link)
+[![Vercel](https://img.shields.io/badge/Vercel-배포_예정-black)](https://hu-link.vercel.app)
+[![Version](https://img.shields.io/badge/version-1.0.0-green)](https://github.com/yonghwan1106/hu-link)
+
 ## 프로젝트 소개
 
-HU-Link는 화성도시공사(HU)의 공공시설 통합 예약 시스템과 H버스 및 대중교통을 연계한 통합 이동 서비스(MaaS)를 하나의 플랫폼으로 구현한 프로토타입입니다.
+HU-Link는 화성도시공사(HU)의 공공시설 통합 예약 시스템과 H버스 및 대중교통을 연계한 통합 이동 서비스(MaaS)를 하나의 플랫폼으로 구현한 웹 애플리케이션입니다.
 
 ### 주요 기능
 
@@ -109,6 +115,20 @@ hu-link/
 - 대중교통 이용 장려
 - 포인트 적립 시스템
 
-## 라이선스
+## 📋 출품 정보
 
-이 프로젝트는 화성도시공사 ESG경영·경영혁신 시민 아이디어 공모전 제출용 프로토타입입니다.
+### 공모전 정보
+- **공모전명**: 화성도시공사 ESG경영·경영혁신 시민 아이디어 공모전
+- **출품 부문**: 경영혁신 아이디어
+- **제출일**: 2025-11-17
+- **개발 기간**: 약 4.5시간 (집중 개발)
+
+### 프로젝트 정보
+- **버전**: 1.0.0
+- **GitHub**: https://github.com/yonghwan1106/hu-link
+- **배포 URL**: https://hu-link.vercel.app (배포 후 업데이트 예정)
+- **문서**: 프로젝트 내 SUMMARY.md, FEATURES.md, DEPLOYMENT.md 참고
+
+## 📄 라이선스
+
+이 프로젝트는 교육 및 공모전 출품 목적으로 제작되었습니다.
