@@ -73,7 +73,7 @@ export const facilities: Facility[] = [
     address: '경기도 화성시 병점동 산91-1',
     coordinates: { lat: 37.1823, lng: 127.0389 },
     images: ['/images/facilities/daram-park-1.jpg'],
-    thumbnailUrl: 'https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&q=80',
+    thumbnailUrl: 'https://images.unsplash.com/photo-1519331379826-f10be5486c6f?w=800&q=80',
     price: 0,
     priceUnit: '무료',
     capacity: 500,
