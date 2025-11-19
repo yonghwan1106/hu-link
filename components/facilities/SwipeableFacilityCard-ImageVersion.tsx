@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { MapPin, Star, Baby, Heart, Dumbbell, Palette, HandHeart, Tent, Users } from 'lucide-react';
@@ -53,6 +54,7 @@ export function SwipeableFacilityCard({
 }: SwipeableFacilityCardProps) {
   const [swipeOffset, setSwipeOffset] = useState(0);
   const [isRevealed, setIsRevealed] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const categoryDisplay = getCategoryDisplay(facility.category);
   const CategoryIcon = categoryDisplay.icon;
 
@@ -103,9 +105,24 @@ export function SwipeableFacilityCard({
         <Link href={`/facilities/${facility.id}`}>
           <Card className={`h-full hover:shadow-2xl hover:scale-[1.02] hover:border-[--primary] transition-all duration-300 cursor-pointer group border-2 border-transparent ${categoryDisplay.bgColor} dark:bg-blue-950/20`}>
             <div className={`aspect-video bg-gradient-to-br ${categoryDisplay.gradient} relative overflow-hidden group-hover:scale-105 transition-transform duration-300`}>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <CategoryIcon className="w-24 h-24 text-white/30 group-hover:text-white/50 transition-all duration-300 group-hover:scale-110" strokeWidth={1.5} />
-              </div>
+              {/* 실제 이미지가 있으면 이미지 표시, 없으면 아이콘 표시 */}
+              {facility.thumbnailUrl && !imageError ? (
+                <>
+                  <Image
+                    src={facility.thumbnailUrl}
+                    alt={facility.name}
+                    fill
+                    className="object-cover"
+                    onError={() => setImageError(true)}
+                  />
+                  {/* 이미지 위에 그라데이션 오버레이 */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </>
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <CategoryIcon className="w-24 h-24 text-white/30 group-hover:text-white/50 transition-all duration-300 group-hover:scale-110" strokeWidth={1.5} />
+                </div>
+              )}
               {facility.isAccessible && (
                 <Badge className="absolute top-2 right-2" variant="success">
                   접근 편리

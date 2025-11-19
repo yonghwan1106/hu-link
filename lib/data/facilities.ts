@@ -8,6 +8,7 @@ export interface Facility {
   address: string;
   coordinates: { lat: number; lng: number };
   images: string[];
+  thumbnailUrl?: string; // 대표 이미지 URL (옵션)
   price: number;
   priceUnit: string;
   capacity: number;
@@ -30,6 +31,7 @@ export const facilities: Facility[] = [
     address: '경기도 화성시 향남읍 행정서로 96',
     coordinates: { lat: 37.0892, lng: 126.8142 },
     images: ['/images/facilities/sports-complex-1.jpg'],
+    thumbnailUrl: 'https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?w=800&q=80',
     price: 5000,
     priceUnit: '시간당',
     capacity: 100,
@@ -50,6 +52,7 @@ export const facilities: Facility[] = [
     address: '경기도 화성시 동탄순환대로 20길 155',
     coordinates: { lat: 37.2010, lng: 127.0745 },
     images: ['/images/facilities/dongtan-sports-1.jpg'],
+    thumbnailUrl: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=80',
     price: 4000,
     priceUnit: '시간당',
     capacity: 80,
@@ -70,6 +73,7 @@ export const facilities: Facility[] = [
     address: '경기도 화성시 병점동 산91-1',
     coordinates: { lat: 37.1823, lng: 127.0389 },
     images: ['/images/facilities/daram-park-1.jpg'],
+    thumbnailUrl: 'https://images.unsplash.com/photo-1587974928442-77dc3e0dba72?w=800&q=80',
     price: 0,
     priceUnit: '무료',
     capacity: 500,
@@ -90,6 +94,7 @@ export const facilities: Facility[] = [
     address: '경기도 화성시 향남읍 발안로 123',
     coordinates: { lat: 37.0654, lng: 126.8234 },
     images: ['/images/facilities/camping-1.jpg'],
+    thumbnailUrl: 'https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=800&q=80',
     price: 35000,
     priceUnit: '1박',
     capacity: 50,
