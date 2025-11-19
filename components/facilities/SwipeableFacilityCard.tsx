@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -53,6 +54,7 @@ export function SwipeableFacilityCard({
 }: SwipeableFacilityCardProps) {
   const [swipeOffset, setSwipeOffset] = useState(0);
   const [isRevealed, setIsRevealed] = useState(false);
+  const [imageError, setImageError] = useState(false);
   const categoryDisplay = getCategoryDisplay(facility.category);
   const CategoryIcon = categoryDisplay.icon;
 
@@ -60,7 +62,6 @@ export function SwipeableFacilityCard({
     onSwipeLeft: () => {
       setIsRevealed(true);
       setSwipeOffset(-80);
-      // Auto-hide after 2 seconds
       setTimeout(() => {
         setIsRevealed(false);
         setSwipeOffset(0);
@@ -75,7 +76,6 @@ export function SwipeableFacilityCard({
 
   return (
     <div className="relative overflow-hidden">
-      {/* Swipe Action Background */}
       <div
         className="absolute inset-0 bg-gradient-to-r from-red-500 to-pink-500 flex items-center justify-end pr-6 rounded-lg"
         style={{
@@ -91,7 +91,6 @@ export function SwipeableFacilityCard({
         </div>
       </div>
 
-      {/* Card */}
       <div
         className="relative bg-white"
         style={{
@@ -102,16 +101,30 @@ export function SwipeableFacilityCard({
       >
         <Link href={`/facilities/${facility.id}`}>
           <Card className={`h-full hover:shadow-2xl hover:scale-[1.02] hover:border-[--primary] transition-all duration-300 cursor-pointer group border-2 border-transparent ${categoryDisplay.bgColor} dark:bg-blue-950/20`}>
-            <div className={`aspect-video bg-gradient-to-br ${categoryDisplay.gradient} relative overflow-hidden group-hover:scale-105 transition-transform duration-300`}>
-              <div className="absolute inset-0 flex items-center justify-center">
-                <CategoryIcon className="w-24 h-24 text-white/30 group-hover:text-white/50 transition-all duration-300 group-hover:scale-110" strokeWidth={1.5} />
-              </div>
+            <div className={`aspect-video relative overflow-hidden group-hover:scale-105 transition-transform duration-300 ${!facility.thumbnailUrl || imageError ? `bg-gradient-to-br ${categoryDisplay.gradient}` : ''}`}>
+              {facility.thumbnailUrl && !imageError ? (
+                <>
+                  <Image
+                    src={facility.thumbnailUrl}
+                    alt={facility.name}
+                    fill
+                    className="object-cover"
+                    onError={() => setImageError(true)}
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-300" />
+                </>
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <CategoryIcon className="w-24 h-24 text-white/30 group-hover:text-white/50 transition-all duration-300 group-hover:scale-110" strokeWidth={1.5} />
+                </div>
+              )}
               {facility.isAccessible && (
-                <Badge className="absolute top-2 right-2" variant="success">
+                <Badge className="absolute top-2 right-2 z-10" variant="success">
                   접근 편리
                 </Badge>
               )}
-              <div className="absolute bottom-2 left-2">
+              <div className="absolute bottom-2 left-2 z-10">
                 <Badge variant="outline" className="bg-white/90">
                   {facility.category === 'sports'
                     ? '체육'
@@ -167,7 +180,6 @@ export function SwipeableFacilityCard({
           </Card>
         </Link>
 
-        {/* Favorite Button (always visible on desktop) */}
         <button
           onClick={(e) => {
             e.preventDefault();
@@ -185,7 +197,6 @@ export function SwipeableFacilityCard({
         </button>
       </div>
 
-      {/* Swipe Action Button (revealed on mobile swipe) */}
       {isRevealed && (
         <button
           onClick={(e) => {
