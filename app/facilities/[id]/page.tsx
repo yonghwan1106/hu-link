@@ -66,7 +66,12 @@ export default function FacilityDetailPage({ params }: { params: Promise<{ id: s
         {/* Facility Hero */}
         <div className="mb-8">
           <div className="relative mb-6">
-            <ImageGallery images={facility.images} alt={facility.name} />
+            <ImageGallery
+              images={facility.images}
+              alt={facility.name}
+              thumbnailUrl={facility.thumbnailUrl}
+              category={facility.category}
+            />
             <div className="absolute top-4 right-4 flex gap-2 z-10">
               {facility.isAccessible && (
                 <Badge className="bg-white text-[--success]">저상버스 접근 가능</Badge>
